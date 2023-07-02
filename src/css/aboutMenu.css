@@ -1,0 +1,174 @@
+.left-container-menu {
+  width: 20rem;
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  top: 60%;
+  transform: translateY(-60%);
+  left: 10vw;
+}
+
+.item {
+  height: 3.7rem;
+  display: flex;
+  justify-content: flex-end;
+  cursor: pointer;
+  align-items: center;
+}
+
+.title {
+  font-size: 1rem;
+  /* padding-right: 2.5rem; */
+}
+/* target item that is active title */
+.item.active .title {
+  font-size: 1.5rem;
+  padding-right: 2.5rem;
+}
+
+.right-container-menu {
+  width: 20rem;
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  top: 32%;
+  right: 10vw;
+  /* transform: translateX(-40%); */
+  cursor: pointer;
+}
+/* we will default the active subheading so it will not be clickable */
+.active-subheading {
+  cursor: default;
+}
+/* target 1st child of item.active and style it  */
+.item.active:nth-child(1) {
+  /* 90deg left and right then var transparent and info and 70% from the end */
+  background: linear-gradient(90deg, var(--transparent), var(--info) 70%);
+  border-radius: var(--radius-right);
+}
+/* target 2nd child of item.active and style it  */
+.item.active:nth-child(2) {
+  /* 90deg left and right then var transparent and info and 70% from the end */
+  background: linear-gradient(90deg, var(--transparent), var(--success) 70%);
+  border-radius: var(--radius-right);
+}
+/* target 1st child of item.active and style it  */
+.item.active:nth-child(3) {
+  /* 90deg left and right then var transparent and info and 70% from the end */
+  background: linear-gradient(90deg, var(--transparent), var(--cyan) 70%);
+  border-radius: var(--radius-right);
+}
+/*the reason we have 1 2 3 sub-container target sub-container that are active-subheading of h3 */
+.sub-container-1.active-subheading h3,
+.sub-container-2.active-subheading h3,
+.sub-container-3.active-subheading h3 {
+  border-radius: var(--radius-left);
+}
+
+.sub-container-1.active-subheading h3 {
+  background: linear-gradient(90deg, var(--info), var(--transparent) 100%);
+  padding-left: 1.5rem;
+}
+
+.sub-container-2.active-subheading h3 {
+  background: linear-gradient(90deg, var(--success), var(--transparent) 100%);
+  padding-left: 1.5rem;
+}
+
+.sub-container-3.active-subheading h3 {
+  background: linear-gradient(90deg, var(--cyan), var(--transparent) 100%);
+  padding-left: 1.5rem;
+}
+
+.item.active {
+  position: relative;
+  cursor: default;
+}
+/* to hide or display none it  */
+.p-container {
+  display: none;
+}
+
+/* to show  or to display the p-container */
+.active-subheading .p-container {
+  display: block;
+  font-size: 1rem;
+}
+
+.icon-title-right {
+  display: flex;
+  gap: 1.2rem;
+  margin-bottom: 0.5rem;
+  cursor: default;
+}
+
+.icon {
+  width: 3rem;
+  height: 3rem;
+}
+
+.sub-container-1 h3,
+.sub-container-2 h3,
+.sub-container-3 h3 {
+  position: relative;
+  margin: 0.2rem 0;
+  padding: 0.5rem 0 0.5rem 1rem;
+}
+
+/* from infoData */
+.divider {
+  display: flex;
+  align-items: center;
+}
+
+.divider-1 {
+  display: inline-block;
+  background-color: #fff;
+  height: 0.3rem;
+  width: 6.5rem;
+}
+
+.divider-2 {
+  background-color: #fcfcfc;
+  height: 0.15rem;
+  width: 5.5rem;
+}
+
+@media (max-width: 700px) {
+  .right-container-menu {
+    right: 1rem;
+  }
+  .item.active .title {
+    font-size: 1rem;
+  }
+  .item {
+    height: 2rem;
+  }
+}
+
+@media (max-width: 700px) {
+  .right-container-menu {
+    width: 15rem;
+    top: 50%;
+    /* 50% */
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .title {
+    font-size: 0.8rem;
+    padding-right: 2.5rem;
+  }
+  .active-subheading .p-container {
+    font-size: 0.8rem;
+  }
+  .icon-title-right,
+  .none {
+    display: none;
+  }
+  h1,
+  h2,
+  h3,
+  p {
+    font-size: 0.8rem;
+  }
+}

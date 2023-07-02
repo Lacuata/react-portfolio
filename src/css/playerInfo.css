@@ -1,0 +1,60 @@
+#playerInfo {
+  width: 20rem;
+  height: 4rem;
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  top: 3rem;
+  left: 3rem;
+}
+
+h1 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+h2 {
+  margin: 0;
+  font-size: 1rem;
+}
+
+#lines {
+  display: flex;
+  align-items: center;
+}
+
+#thick {
+  display: inline-block;
+  background-color: #fff;
+  height: 0.2rem;
+  width: 10rem;
+}
+
+#thin {
+  /* display: block; */
+  background-color: #fcfcfc;
+  height: 0.1rem;
+  width: 8rem;
+}
+
+@media (max-width: 1100px) {
+  #playerInfo {
+    /* move it to the left 50% then transform put it back at 50% of the width */
+    transform: translateX(-50%);
+    left: 50%;
+    height: 2.5rem;
+    top: 2rem;
+    width: 9.9rem;
+  }
+
+  h1 {
+    font-size: 0.8rem;
+  }
+
+  h2,
+  h3,
+  p {
+    font-size: 0.8rem;
+  }
+}
